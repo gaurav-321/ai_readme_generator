@@ -1,71 +1,86 @@
-# AI README Generator 🤖
+# Project Documentation
 
-## Description
-The AI README Generator is an open-source tool designed to automate the creation and maintenance of README files. It leverages AI-powered summarization and generation capabilities to ensure that your project documentation remains up-to-date, accurate, and engaging.
-
-## Features
-- **AI-Powered Summarization**: Automatically generate summaries for text content using advanced AI models.
-- **Dynamic Content Management**: Easily update and manage README files with real-time data and insights.
-- **Customizable Templates**: Use pre-defined templates or create custom ones to match your project's style and requirements.
-- **Integration Capabilities**: Seamlessly integrate with various version control systems and issue tracking tools.
-
-## Installation
-To get started with the AI README Generator, follow these steps:
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/your-repo/AI-README-Generator.git
-    cd AI-README-Generator
-    ```
-
-2. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Configure Environment Variables**:
-    Create a `.env` file and add your API keys and other necessary configurations.
-
-## Usage
-The AI README Generator can be used in several ways:
-
-### Generating a README File
-To generate a README file for your project, run the following command:
-```bash
-python generate_readme.py --project_name "My Project" --description "This is my awesome project"
-```
-
-### Updating an Existing README
-If you need to update an existing README file, simply run the generator with the appropriate flags.
-
-### Customizing Templates
-You can customize the templates used for generating README files by modifying the template files located in the `templates` directory.
-
-## Contributing
-We welcome contributions from the community! If you find a bug or have an idea for a new feature, please open an issue or submit a pull request.
-
-1. **Fork the Repository**:
-    ```bash
-    git clone https://github.com/your-repo/AI-README-Generator.git
-    ```
-
-2. **Create a Feature Branch**:
-    ```bash
-    git checkout -b feature/my-feature
-    ```
-
-3. **Make Your Changes**:
-    Commit your changes and push them to your fork.
-
-4. **Submit a Pull Request**:
-    Open a pull request from your feature branch to the main repository.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-For any questions or support, please contact us at [support@ai-readme-generator.com](mailto:support@ai-readme-generator.com).
+## Table of Contents
+1. [Assignment Solver](#assignment-solver)
+2. [Flask Video Stream](#flask-video-stream)
+3. [Music Discord Bot](#music-discord-bot)
+4. [Proxy-API-Service](#proxy-api-service)
 
 ---
 
-Thank you for using the AI README Generator! 🌟
+## Assignment Solver
+
+### Purpose
+The `Assignment Solver` program converts plain text input into images that appear handwritten, supporting custom fonts and notebook-style backgrounds.
+
+### Key Elements
+- Converts text to handwritten images.
+- Supports custom fonts and notebook backgrounds.
+- Uses OpenCV for image processing and PIL for text overlay.
+- Configurable via OpenCV trackbars for spacing and font size.
+
+### Dependencies
+- `OpenCV`
+- `PIL` (Python Imaging Library)
+
+### Output
+Handwritten-style images saved in the `output/` directory.
+
+---
+
+## Flask Video Stream
+
+### Purpose
+A Flask web application that serves and allows searching of video files stored locally.
+
+### Key Elements
+- `app.py`: Sets up the Flask application, handles routing, and provides functionality to serve videos and search for them.
+- Uses Flask library for web server functionality.
+- Handles routing for displaying videos and search results.
+
+### Dependencies
+- Flask
+
+### Output
+A web interface allowing users to browse and search video files.
+
+---
+
+## Music Discord Bot
+
+### Purpose
+Music_Discord_Bot is a Discord bot designed to enhance the music experience by allowing users to play, skip, manage, and stop music directly from voice channels using commands.
+
+### Key Elements
+- `app.py`: Handles commands and events for the bot.
+- `functions.py`: Contains functions for YouTube audio downloads and managing the song queue.
+- `.env` file: Stores environment variables like the Discord bot token.
+
+### Dependencies
+- `discord.py` for interacting with Discord
+- `youtube-dl` for downloading YouTube videos
+- `python-dotenv` for handling environment variables
+
+### Output
+The bot responds to commands in Discord by playing music, managing the queue, and providing status updates.
+
+---
+
+## Proxy-API-Service
+
+### Purpose
+The Proxy-API-Service is a Python-based FastAPI application designed to scrape, filter, and verify public HTTP/SOCKS proxies from GitHub repositories. It provides an API for downloading raw and verified proxy lists with secure authentication.
+
+### Key Elements
+- **FastAPI Server**: Handles API requests efficiently.
+- **GitHub Scraping Logic**: Searches for proxy-related files on GitHub.
+- **Proxy Testing Module**: Validates proxies using HTTP/SOCKS support.
+- **Background Collection Loop**: Automatically updates proxy lists every 30 minutes.
+- **Secure Authentication**: Protects download endpoints with basic authentication.
+
+### Dependencies
+- `fastapi`
+- `uvicorn`
+
+### Output
+The file returns a JSON object containing the content of requested files (e.g., raw.txt, proxies.txt). It also logs working proxies and their count when testing.
