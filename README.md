@@ -1,96 +1,63 @@
-# GitHub README Generator
+# AI README Generator
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/github/license/gag3301v/ai_readme_generator)](LICENSE)
+✨ **Project Title:** AI README Generator
 
- 自动生成和增强GitHub仓库README文件的Python程序。
+🚀 **Description:**
+The AI README Generator is an open-source tool that automates the generation, enhancement, and summarization of README files for GitHub repositories. It leverages GitHub API to fetch file data and OpenAI's GPT-4 model to create meaningful content.
 
-## ✨ Description
+🛠️ **Installation:**
+To get started with the AI README Generator, follow these steps:
 
-`ai_readme_generator` 是一个用于自动化生成和改进GitHub仓库README文件的工具。它可以根据项目文件内容自动生成新的README.md，增强现有的README.md，或总结整个仓库的内容并写入本地文件。该工具利用了GitHub API和OpenAI API来实现这些功能。
-
-## 🚀 Features
-
-- 自动生成README文件
-- 增强现有README文件
-- 总结仓库内容并写入本地文件
-- 使用GitHub API获取仓库信息
-- 使用OpenAI API生成文本摘要
-
-## ⛠️ Installation
-
-1. 克隆仓库：
+1. Clone this repository:
    ```bash
    git clone https://github.com/gag3301v/ai_readme_generator.git
    cd ai_readme_generator
    ```
 
-2. 安装依赖：
+2. Install dependencies using pip:
    ```bash
    pip install -r requirements.txt
    ```
 
-## 📦 Usage
+3. Create a `.env` file in the root directory and add your GitHub token:
+   ```
+   GITHUB_TOKEN=your_github_token_here
+   DEBUG=True  # Optional: enable debug logging
+   ```
 
-### 生成README文件
+🔧 **Configuration:**
+- The `config.py` file loads environment variables from a `.env` file and sets up HTTP headers for authentication.
+- The `github_api.py` script interacts with the GitHub API to fetch repository information.
+- The `summarizer.py` file uses OpenAI's GPT-4 model to generate summaries of text prompts.
 
-```python
-from main import add_readme
-
-repo = "gaurav-321/my_repo"
-add_readme(repo)
-```
-
-### 增强README文件
-
-```python
-from main import enhance_readme
-
-repo = "gaurav-321/my_repo"
-enhance_readme(repo)
-```
-
-### 总结仓库内容
-
-```python
-from main import summarize_repo
-
-repo = "gaurav-321/my_repo"
-summarize_repo(repo)
-```
-
-## 🔧 Configuration
-
-在项目根目录下创建一个 `.env` 文件，并添加以下环境变量：
-
-```plaintext
-GITHUB_TOKEN=your_github_token_here
-```
-
-## 🧪 Tests
-
-运行测试：
-
+🧪 **Tests:**
+To run tests, execute:
 ```bash
 pytest
 ```
 
-## 📁 Project Structure
-
+📁 **Project Structure:**
 ```
 ai_readme_generator/
 ├── config.py
 ├── github_api.py
 ├── main.py
-├── prompts.py
 ├── requirements.txt
-└── utils.py
+└── summarizer.py
 ```
 
-## 👥 Contributing
+🙌 **Contributing:**
+We welcome contributions! Please follow these guidelines:
 
-欢迎贡献！请阅读 [CONTRIBUTING.md](https://github.com/gag3301v/ai_readme_generator/blob/master/CONTRIBUTING.md) 了解如何参与。
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature-name`).
+5. Open a pull request.
 
-## 📄 License
+📄 **License:**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-本项目采用 [MIT 许可证](LICENSE)。
+---
+
+**Note:** The `summarizer.py` file requires additional content to provide a detailed summary of its functionality. If you have access to this file, please share it so we can include a comprehensive summary in this README.
