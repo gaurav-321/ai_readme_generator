@@ -7,16 +7,12 @@ from utils import summarize_file
 
 
 # Valid file types to include in README summarization
-valid_files = [".py", ".txt", ".md"]
+valid_files = [".py", ".txt"]
 
 
 def add_readme(repo):
     """Generates and uploads a new README.md based on the summarized content of project files."""
     try:
-        file_content = get_file_data(owner, repo, "master", "README.md")
-        if file_content:
-            logging.warning(f"README.md already exist: {repo}")
-            return
         files_paths = get_all_files(owner, REPO=repo)
         files_paths = [x for x in files_paths if x.lower().endswith(tuple(valid_files))]
         prompt_temp = prompt_readme + f"\nUrl for this repo is https://github.com/gag3301v/{repo}"
@@ -26,6 +22,8 @@ def add_readme(repo):
             return None
 
         for file in files_paths:
+            if file in blacklist_file:
+                continue
             try:
                 file_content = get_file_data(owner, repo, "master", file)
                 prompt_summarizer_temp = prompt_summarizer + "\n" + file + "\n" + file_content
@@ -114,7 +112,7 @@ if __name__ == "__main__":
     owner = "gaurav-321"
     repos = find_all_repo(owner)
 
-    # Print available repos with index
+    # Print available repos with index2
     print("\n📦 Repositories found:")
     for i, repo in enumerate(repos):
         print(f"[{i}] {repo}")

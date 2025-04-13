@@ -14,3 +14,4 @@ headers = {
 owner = "gaurav-321"
 debug = False
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
+blacklist_file = ["prompts.py", "README.md"]
